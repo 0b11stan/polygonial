@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tristan/Documents/polygonial/main.cpp">
+		<Unit filename="/home/tristan/Documents/polygonial/src/main.cpp">
 			<Option target="polygonial"/>
 		</Unit>
 		<Unit filename="/home/tristan/Documents/polygonial/CMakeLists.txt">
