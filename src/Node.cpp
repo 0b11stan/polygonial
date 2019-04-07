@@ -18,4 +18,5 @@ void Node::fill(Record &record) {
 }
 
 void Node::order(Record record) {
+    left.reset(new Node(record));
 }
