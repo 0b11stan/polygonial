@@ -7,7 +7,8 @@
 
 enum Label {
     NONE,
-    SQUARE
+    SQUARE,
+    EQUILATERAL_TRIANGLE
 };
 
 class Record {

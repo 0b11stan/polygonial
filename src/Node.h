@@ -13,8 +13,8 @@ class Node {
 
 private:
     int key;
-    Node *left = nullptr;
-    Node *right = nullptr;
+    std::unique_ptr<Node> left;
+    std::unique_ptr<Node> right;
     std::vector<Record> records;
 
 public:
@@ -26,7 +26,7 @@ public:
     /*
      * Order and store the record in the nodes tree.
      */
-    void order(Record &record);
+    void order(Record record);
 
     /*
      * If the record sides number match this node key, go trough the records to find a matching one.
@@ -34,6 +34,8 @@ public:
      */
     void fill(Record &record);
 
+    bool has_left() { return left != nullptr; }
+    bool has_right() { return left != nullptr; }
 };
 
 

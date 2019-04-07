@@ -6,7 +6,7 @@
 
 #include "../src/Node.cpp"
 
-TEST_CASE("Node usage.", "[node]") {
+TEST_CASE("Record filling.", "[node]") {
 
     Record filled_record(4, 4, 4, 4);
     filled_record.set_label(SQUARE);
@@ -26,4 +26,24 @@ TEST_CASE("Node usage.", "[node]") {
 
         REQUIRE(unfilled_record.get_label() == Label::NONE);
     }
+}
+
+TEST_CASE("Node ordering.", "[node]") {
+
+    Record parent_record(4, 4, 4, 4);
+    parent_record.set_label(SQUARE);
+
+    Node parent_node(parent_record);
+
+    // TODO : record with no facts
+    SECTION("A record with less sides become left children.") {
+        Record children_record(3, 0, 0, 3);
+        children_record.set_label(EQUILATERAL_TRIANGLE);
+
+        parent_node.order(children_record);
+
+        REQUIRE(parent_node.has_left());
+        REQUIRE(!parent_node.has_right());
+    }
+
 }

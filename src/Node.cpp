@@ -16,3 +16,6 @@ void Node::fill(Record &record) {
         record.set_label(last_record.get_label());
     }
 }
+
+void Node::order(Record record) {
+}
