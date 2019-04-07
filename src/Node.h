@@ -13,8 +13,8 @@ class Node {
 
 private:
     int key;
-    std::unique_ptr<Node> left;
-    std::unique_ptr<Node> right;
+    std::unique_ptr<Node> left = nullptr;
+    std::unique_ptr<Node> right = nullptr;
     std::vector<Record> records;
 
 public:
