@@ -6,7 +6,7 @@
 #define POLYGONIAL_RECORD_H
 
 enum Label {
-
+    SQUARE
 };
 
 class Record {
