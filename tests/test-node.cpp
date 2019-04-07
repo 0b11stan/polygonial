@@ -35,7 +35,7 @@ TEST_CASE("Node ordering.", "[node]") {
 
     Node parent_node(parent_record);
 
-    // TODO : record with no facts
+    // TODO : record with no label
     SECTION("A record with less sides become left children.") {
         Record children_record(3, 0, 0, 3);
         children_record.set_label(EQUILATERAL_TRIANGLE);
@@ -54,6 +54,19 @@ TEST_CASE("Node ordering.", "[node]") {
 
         REQUIRE(!parent_node.has_left());
         REQUIRE(parent_node.has_right());
+    }
+
+    SECTION("A record with same number of sides but is added to this node facts.") {
+        unsigned size = parent_node.get_size();
+
+        Record child_record(4, 4, 4, 2);
+        child_record.set_label(RECTANGLE);
+
+        parent_node.order(child_record);
+
+        REQUIRE(!parent_node.has_left());
+        REQUIRE(!parent_node.has_right());
+        REQUIRE(parent_node.get_size() == size + 1);
     }
 
 }
