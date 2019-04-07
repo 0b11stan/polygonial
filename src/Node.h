@@ -13,8 +13,8 @@ class Node {
 
 private:
     int key;
-    Node left;
-    Node right;
+    Node &left;
+    Node &right;
     std::vector<Record> records;
 
 public:
