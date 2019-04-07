@@ -6,7 +6,15 @@
 #define POLYGONIAL_RULESENGINE_H
 
 
+#include "Record.h"
+
 class RulesEngine {
+
+public:
+    /*
+     * Go trough the rules to fill the record's label.
+     */
+    void fill(Record &record);
 
 };
 

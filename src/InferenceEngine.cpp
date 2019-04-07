@@ -3,3 +3,6 @@
 //
 
 #include "InferenceEngine.h"
+
+InferenceEngine::InferenceEngine(FactsEngine &factsEngine, RulesEngine &rulesEngine) : rulesEngine(rulesEngine),
+                                                                                       factsEngine(factsEngine) {}
