@@ -18,10 +18,6 @@ void Node::fill(Record &record) {
 }
 
 void Node::order(Record record) {
-    if (record.get_sides() < key) {
-        left.reset(new Node(record));
-    }
-    else if (record.get_sides() > key) {
-        right.reset(new Node(record));
-    }
+    if (record.get_sides() < key) left.reset(new Node(record));
+    else if (record.get_sides() > key) right.reset(new Node(record));
 }
