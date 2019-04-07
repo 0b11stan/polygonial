@@ -13,15 +13,15 @@ class Node {
 
 private:
     int key;
-    Node &left;
-    Node &right;
+    Node *left = nullptr;
+    Node *right = nullptr;
     std::vector<Record> records;
 
 public:
     /*
      * Create a new node with a record.
      */
-    Node(Record record);
+    explicit Node(Record record);
 
     /*
      * Order and store the record in the nodes tree.
