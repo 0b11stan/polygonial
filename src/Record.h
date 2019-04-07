@@ -6,6 +6,7 @@
 #define POLYGONIAL_RECORD_H
 
 enum Label {
+    NONE,
     SQUARE
 };
 
@@ -16,7 +17,7 @@ private:
     int right_angles;
     int parallels_sides;
     int same_length_sides;
-    Label label;
+    Label label = NONE;
 
 public:
     Record(int sides, int right_angles, int parallels_sides, int same_lenght_sides) : sides(sides),

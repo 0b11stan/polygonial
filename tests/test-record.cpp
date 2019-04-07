@@ -12,7 +12,7 @@ TEST_CASE("Records usage.", "[record]") {
     REQUIRE(record.get_right_angles() == 1);
     REQUIRE(record.get_parallels_sides() == 0);
     REQUIRE(record.get_same_length_sides() == 0);
-    REQUIRE(record.get_label() == Label());
+    REQUIRE(record.get_label() == Label::NONE);
 
     SECTION("Label can be set later.") {
         record.set_label(SQUARE);

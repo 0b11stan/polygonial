@@ -11,5 +11,8 @@ Node::Node(Record record) {
 
 void Node::fill(Record &record) {
     Record last_record = records.back();
-    record.set_label(last_record.get_label());
+
+    if (record.get_sides() == key) {
+        record.set_label(last_record.get_label());
+    }
 }

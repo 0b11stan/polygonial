@@ -17,6 +17,13 @@ TEST_CASE("Node usage.", "[node]") {
         Record unfilled_record(4, 4, 4, 4);
         node.fill(unfilled_record);
 
-        REQUIRE(unfilled_record.get_label() == SQUARE);
+        REQUIRE(unfilled_record.get_label() == Label::SQUARE);
+    }
+
+    SECTION("A leaf node can't fill a record if no fact match.") {
+        Record unfilled_record(3, 0, 0, 3);
+        node.fill(unfilled_record);
+
+        REQUIRE(unfilled_record.get_label() == Label::NONE);
     }
 }
