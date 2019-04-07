@@ -3,6 +3,7 @@
 //
 
 #include "catch.hpp"
+#include <exception>
 
 #include "../src/Node.cpp"
 
@@ -35,7 +36,17 @@ TEST_CASE("Node ordering.", "[node]") {
 
     Node parent_node(parent_record);
 
-    // TODO : record with no label
+    SECTION("A record with no label can't be ordered.") {
+        Record child_record(3, 0, 0, 3);
+        bool excepted = false;
+        try {
+            parent_node.order(child_record);
+        } catch (std::exception& exception) {
+            excepted = true;
+        }
+        REQUIRE(excepted == true);
+    }
+
     SECTION("A record with less sides become left children.") {
         Record children_record(3, 0, 0, 3);
         children_record.set_label(EQUILATERAL_TRIANGLE);
