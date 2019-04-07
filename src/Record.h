@@ -8,6 +8,7 @@
 enum Label {
     NONE,
     SQUARE,
+    HEXAGON,
     EQUILATERAL_TRIANGLE
 };
 

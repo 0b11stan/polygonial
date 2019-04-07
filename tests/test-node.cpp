@@ -46,4 +46,14 @@ TEST_CASE("Node ordering.", "[node]") {
         REQUIRE(!parent_node.has_right());
     }
 
+    SECTION("A record with more sides become right children.") {
+        Record children_record(6, 0, 6, 6);
+        children_record.set_label(HEXAGON);
+
+        parent_node.order(children_record);
+
+        REQUIRE(!parent_node.has_left());
+        REQUIRE(parent_node.has_right());
+    }
+
 }
