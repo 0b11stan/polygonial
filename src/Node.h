@@ -35,7 +35,9 @@ public:
     void fill(Record &record);
 
     bool has_left() { return left != nullptr; }
+
     bool has_right() { return right != nullptr; }
+
     unsigned get_size() { return records.size(); }
 };
 
