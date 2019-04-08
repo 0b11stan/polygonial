@@ -12,35 +12,41 @@ TEST_CASE("Record filling.", "[node]") {
     Record filled_record(4, 4, 4, 4);
     filled_record.set_label(SQUARE);
 
-    Node node(filled_record);
+    Node parent_node(filled_record);
 
-    SECTION("A node can fill a record from an existing fact.") {
+    SECTION("A parent_node can fill a record from an existing fact.") {
         Record unfilled_record(4, 4, 4, 4);
-        node.fill(unfilled_record);
+        parent_node.fill(unfilled_record);
 
         REQUIRE(unfilled_record.get_label() == Label::SQUARE);
     }
 
-    SECTION("A leaf node can't fill a record if no fact match.") {
+    SECTION("A leaf parent_node can't fill a record if no fact match.") {
         Record unfilled_record(3, 0, 0, 3);
-        node.fill(unfilled_record);
+        parent_node.fill(unfilled_record);
 
         REQUIRE(unfilled_record.get_label() == Label::NONE);
     }
 
-//    SECTION("A record can be filled by the left child node.") {
-//        Record triangle_record(3, 0, 0, 3);
-//        triangle_record.set_label(EQUILATERAL_TRIANGLE);
-//        node.order(triangle_record);
-//
-//        Record unfilled_record(3, 0, 0, 3);
-//        node.fill(unfilled_record);
-//        REQUIRE(unfilled_record.get_label() == Label::EQUILATERAL_TRIANGLE);
-//    }
-//
-//    SECTION("A record with more sides is filled by the right child node.") {
-//
-//    }
+    SECTION("A record can be filled by the left child parent_node.") {
+        Record triangle_record(3, 0, 0, 3);
+        triangle_record.set_label(EQUILATERAL_TRIANGLE);
+        parent_node.order(new Node(triangle_record));
+
+        Record unfilled_record(3, 0, 0, 3);
+        parent_node.fill(unfilled_record);
+        REQUIRE(unfilled_record.get_label() == Label::EQUILATERAL_TRIANGLE);
+    }
+
+    SECTION("A record with more sides is filled by the right child parent_node.") {
+        Record children_record(6, 0, 6, 6);
+        children_record.set_label(HEXAGON);
+        parent_node.order(new Node(children_record));
+
+        Record unfilled_record(6, 0, 6, 6);
+        parent_node.fill(unfilled_record);
+        REQUIRE(unfilled_record.get_label() == Label::HEXAGON);
+    }
 }
 
 TEST_CASE("Node ordering.", "[node]") {
