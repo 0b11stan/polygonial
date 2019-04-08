@@ -4,7 +4,6 @@
 
 #include "catch.hpp"
 #include <exception>
-
 #include "../src/Node.cpp"
 
 TEST_CASE("Record filling.", "[node]") {
@@ -61,7 +60,7 @@ TEST_CASE("Node ordering.", "[node]") {
         std::string message;
         try {
             Node node(child_record);
-        } catch (std::exception& exception) {
+        } catch (std::exception &exception) {
             message = exception.what();
         }
         REQUIRE(message == "Un unfilled record was provided where a filled one was expected.");

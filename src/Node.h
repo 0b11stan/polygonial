@@ -5,7 +5,6 @@
 #ifndef POLYGONIAL_NODE_H
 #define POLYGONIAL_NODE_H
 
-
 #include <vector>
 #include "Record.h"
 
