@@ -27,6 +27,20 @@ TEST_CASE("Record filling.", "[node]") {
 
         REQUIRE(unfilled_record.get_label() == Label::NONE);
     }
+
+//    SECTION("A record can be filled by the left child node.") {
+//        Record triangle_record(3, 0, 0, 3);
+//        triangle_record.set_label(EQUILATERAL_TRIANGLE);
+//        node.order(triangle_record);
+//
+//        Record unfilled_record(3, 0, 0, 3);
+//        node.fill(unfilled_record);
+//        REQUIRE(unfilled_record.get_label() == Label::EQUILATERAL_TRIANGLE);
+//    }
+//
+//    SECTION("A record with more sides is filled by the right child node.") {
+//
+//    }
 }
 
 TEST_CASE("Node ordering.", "[node]") {
@@ -36,11 +50,11 @@ TEST_CASE("Node ordering.", "[node]") {
 
     Node parent_node(parent_record);
 
-    SECTION("A record with no label can't be ordered.") {
+    SECTION("A node can't be created if record is unfilled.") {
         Record child_record(3, 0, 0, 3);
         std::string message;
         try {
-            parent_node.order(child_record);
+            Node node(child_record);
         } catch (std::exception& exception) {
             message = exception.what();
         }
@@ -51,7 +65,7 @@ TEST_CASE("Node ordering.", "[node]") {
         Record children_record(3, 0, 0, 3);
         children_record.set_label(EQUILATERAL_TRIANGLE);
 
-        parent_node.order(children_record);
+        parent_node.order(new Node(children_record));
 
         REQUIRE(parent_node.has_left());
         REQUIRE(!parent_node.has_right());
@@ -61,7 +75,7 @@ TEST_CASE("Node ordering.", "[node]") {
         Record children_record(6, 0, 6, 6);
         children_record.set_label(HEXAGON);
 
-        parent_node.order(children_record);
+        parent_node.order(new Node(children_record));
 
         REQUIRE(!parent_node.has_left());
         REQUIRE(parent_node.has_right());
@@ -73,7 +87,7 @@ TEST_CASE("Node ordering.", "[node]") {
         Record child_record(4, 4, 4, 2);
         child_record.set_label(RECTANGLE);
 
-        parent_node.order(child_record);
+        parent_node.order(new Node(child_record));
 
         REQUIRE(!parent_node.has_left());
         REQUIRE(!parent_node.has_right());
