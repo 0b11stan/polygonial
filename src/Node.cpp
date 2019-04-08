@@ -3,6 +3,7 @@
 //
 
 #include "Node.h"
+#include "UnfilledRecordException.hpp"
 
 Node::Node(Record record) {
     this->key = record.get_sides();
@@ -15,6 +16,7 @@ void Node::fill(Record &record) {
 }
 
 void Node::order(Record record) {
+    if (record.get_label() == Label::NONE) throw UnfilledRecord;
     if (record.get_sides() < key) left.reset(new Node(record));
     else if (record.get_sides() > key) right.reset(new Node(record));
     else records.push_back(record);

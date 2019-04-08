@@ -38,13 +38,13 @@ TEST_CASE("Node ordering.", "[node]") {
 
     SECTION("A record with no label can't be ordered.") {
         Record child_record(3, 0, 0, 3);
-        bool excepted = false;
+        std::string message;
         try {
             parent_node.order(child_record);
         } catch (std::exception& exception) {
-            excepted = true;
+            message = exception.what();
         }
-        REQUIRE(excepted == true);
+        REQUIRE(message == "Un unfilled record was provided where a filled one was expected.");
     }
 
     SECTION("A record with less sides become left children.") {

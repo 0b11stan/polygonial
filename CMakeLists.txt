@@ -8,7 +8,7 @@ add_executable(polygonial
         src/Record.h
         src/RulesEngine.h src/RulesEngine.cpp
         src/Node.h src/Node.cpp
-        src/UnfilledRecordException.h src/UnfilledRecordException.cpp)
+        src/UnfilledRecordException.hpp)
 
 add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE tests/catch.hpp)
