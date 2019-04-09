@@ -15,7 +15,7 @@ enum Label {
     RECTANGLE,
     HEXAGON,
     HEPTAGON,
-    OCTAOGON,
+    OCTAGON,
     NONAGON,
     DECAGON
 };

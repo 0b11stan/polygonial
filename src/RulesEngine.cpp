@@ -23,7 +23,7 @@ void RulesEngine::fill(Record &record) {
             record.set_label(HEPTAGON);
             break;
         case 8:
-            record.set_label(OCTAOGON);
+            record.set_label(OCTAGON);
             break;
         case 9:
             record.set_label(NONAGON);
