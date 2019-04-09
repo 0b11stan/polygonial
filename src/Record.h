@@ -7,6 +7,7 @@
 
 enum Label {
     NONE,
+    TRIANGLE,
     SQUARE,
     RECTANGLE,
     HEXAGON,
