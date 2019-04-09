@@ -13,10 +13,12 @@ TEST_CASE("Records usage.", "[record]") {
     REQUIRE(record.get_parallels_sides() == 0);
     REQUIRE(record.get_same_length_sides() == 0);
     REQUIRE(record.get_label() == Label::NONE);
+    REQUIRE(not record.is_filled());
 
     SECTION("Label can be set later.") {
         record.set_label(SQUARE);
         REQUIRE(record.get_label() == Label::SQUARE);
+        REQUIRE(record.is_filled());
     }
 }
 

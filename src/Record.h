@@ -41,6 +41,7 @@ public:
 
     void set_label(Label p_label) { this->label = p_label; }
 
+    bool is_filled() { return label != NONE; }
 };
 
 
