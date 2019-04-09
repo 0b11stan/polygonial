@@ -9,11 +9,13 @@
 #include <string>
 #include "Record.h"
 #include "UnfilledRecordException.hpp"
+#include "Node.h"
 
 class FactsEngine {
 
 private:
     std::string file_path;
+    std::unique_ptr<Node> root_node = nullptr;
 
 public:
     explicit FactsEngine(std::string file_path) : file_path(std::move(file_path)) {}
