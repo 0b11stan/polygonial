@@ -15,6 +15,6 @@ class UnfilledRecordException : virtual public std::exception {
         return "Un unfilled record was provided where a filled one was expected.";
     }
 
-} UnfilledRecord;
+};
 
 #endif //POLYGONIAL_UNFILLEDRECORDEXCEPTION_HPP

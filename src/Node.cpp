@@ -3,10 +3,9 @@
 //
 
 #include "Node.h"
-#include "UnfilledRecordException.hpp"
 
 Node::Node(Record record) {
-    if (record.get_label() == Label::NONE) throw UnfilledRecord;
+    if (record.get_label() == Label::NONE) throw UnfilledRecordException();
     this->key = record.get_sides();
     this->records.push_back(record);
 }

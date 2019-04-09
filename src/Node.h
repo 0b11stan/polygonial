@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "Record.h"
+#include "UnfilledRecordException.hpp"
 
 class Node {
 

@@ -8,6 +8,7 @@
 #include <utility>
 #include <string>
 #include "Record.h"
+#include "UnfilledRecordException.hpp"
 
 class FactsEngine {
 

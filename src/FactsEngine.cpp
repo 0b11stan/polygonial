@@ -7,3 +7,7 @@
 void FactsEngine::fill(Record &record) {
 
 }
+
+void FactsEngine::store(Record &record) {
+    if (not record.is_filled()) throw UnfilledRecordException();
+}
