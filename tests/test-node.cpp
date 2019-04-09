@@ -6,7 +6,7 @@
 #include <exception>
 #include "../src/Node.cpp"
 
-TEST_CASE("Record filling.", "[node]") {
+TEST_CASE("The facts tree can fill a record if it already knows it.", "[node]") {
 
     Record filled_record(4, 4, 4, 4);
     filled_record.set_label(SQUARE);
@@ -48,7 +48,7 @@ TEST_CASE("Record filling.", "[node]") {
     }
 }
 
-TEST_CASE("Node ordering.", "[node]") {
+TEST_CASE("The tree can store a record in an effective way.", "[node]") {
 
     Record parent_record(4, 4, 4, 4);
     parent_record.set_label(SQUARE);

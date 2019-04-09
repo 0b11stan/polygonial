@@ -3,3 +3,7 @@
 //
 
 #include "FactsEngine.h"
+
+void FactsEngine::fill(Record &record) {
+
+}

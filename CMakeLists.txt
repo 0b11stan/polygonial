@@ -16,7 +16,8 @@ target_include_directories(Catch INTERFACE tests/catch.hpp)
 add_executable(tests
         tests/test-main.cpp
         tests/test-record.cpp
-        tests/test-node.cpp)
+        tests/test-node.cpp
+        tests/test-factsengine.cpp)
 
 target_link_libraries(tests Catch)
 enable_testing()

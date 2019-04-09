@@ -5,7 +5,7 @@
 #ifndef POLYGONIAL_FACTSENGINE_H
 #define POLYGONIAL_FACTSENGINE_H
 
-
+#include <utility>
 #include <string>
 #include "Record.h"
 
@@ -15,6 +15,8 @@ private:
     std::string file_path;
 
 public:
+    explicit FactsEngine(std::string file_path) : file_path(std::move(file_path)) {}
+
     /*
      * Store the record in the fact tree.
      */
