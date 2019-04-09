@@ -8,10 +8,16 @@
 enum Label {
     NONE,
     TRIANGLE,
+    EQUILATERAL_TRIANGLE,
+    TETRAGON,
     SQUARE,
+    PENTAGON,
     RECTANGLE,
     HEXAGON,
-    EQUILATERAL_TRIANGLE
+    HEPTAGON,
+    OCTAOGON,
+    NONAGON,
+    DECAGON
 };
 
 class Record {
