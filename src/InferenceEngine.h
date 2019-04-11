@@ -13,8 +13,8 @@
 class InferenceEngine {
 
 private:
-    FactsEngine factsEngine;
-    RulesEngine rulesEngine;
+    FactsEngine &factsEngine;
+    RulesEngine &rulesEngine;
 
 public:
     InferenceEngine(FactsEngine &factsEngine, RulesEngine &rulesEngine);

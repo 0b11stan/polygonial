@@ -18,7 +18,8 @@ add_executable(tests
         tests/test-record.cpp
         tests/test-node.cpp
         tests/test-factsengine.cpp
-        tests/test-rulesengine.cpp)
+        tests/test-rulesengine.cpp
+        tests/test-inferenceengine.cpp)
 
 target_link_libraries(tests Catch)
 enable_testing()
