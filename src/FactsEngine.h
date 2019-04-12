@@ -7,9 +7,10 @@
 
 #include <utility>
 #include <string>
+#include <memory>
+#include "Node.h"
 #include "Record.h"
 #include "UnfilledRecordException.hpp"
-#include "Node.h"
 
 class FactsEngine {
 
