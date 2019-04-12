@@ -5,9 +5,37 @@
 #include <cstdio>
 #include <getopt.h>
 #include <cstdlib>
+#include "src/Record.h"
+#include "src/RulesEngine.h"
+#include "src/FactsEngine.h"
+#include "src/InferenceEngine.h"
+
+std::string to_string(Label label) {
+    switch (label) {
+        case TRIANGLE:
+            return "TRIANGLE";
+        case TETRAGON:
+            return "TETRAGON";
+        case PENTAGON:
+            return "PENTAGON";
+        case HEXAGON:
+            return "HEXAGON";
+        case HEPTAGON:
+            return "HEPTAGON";
+        case OCTAGON:
+            return "OCTAGON";
+        case NONAGON:
+            return "NONAGON";
+        case DECAGON:
+            return "DECAGON";
+        case NONE:
+        default:
+            return "UNKNOWN POLYGON";
+    }
+}
 
 int main(int argc, char *argv[]) {
-    printf("Hello World !\n");
+    printf("Welcome to Polygonial, your polygon :\n");
 
     int count;
     int sides = 0;
@@ -39,6 +67,14 @@ int main(int argc, char *argv[]) {
     printf("right angles : %d\n", right_angles);
     printf("parallels sides : %d\n", parallels_sides);
     printf("same length sides : %d\n", same_length_sides);
+
+    Record record(sides, right_angles, parallels_sides, same_length_sides);
+    RulesEngine rulesEngine;
+    FactsEngine factsEngine("/tmp/polygonial");
+    InferenceEngine inferenceEngine(factsEngine, rulesEngine);
+    inferenceEngine.process(record);
+
+    printf("\nYour polygon is a %s\n", to_string(record.get_label()).c_str());
 
     return 0;
 }
