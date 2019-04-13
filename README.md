@@ -8,4 +8,6 @@ Expert system detecting polygon developped in C++ by François Montagné and Tri
 - [x] Finding triangles to decagons.
 - [x] Basic Command line interface.
 - [ ] Graphical User Interface
-- [ ] Specific rules.
+- [x] Specific rules.
+- [ ] Refactor rules using pointer functions.
+- [ ] Refactor rules using tags.
