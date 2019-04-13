@@ -32,4 +32,30 @@ TEST_CASE("RE can recognize simple polygon from triangle to decagon.", "[RE]") {
         rulesEngine.fill(right_isosceles_triangle);
         REQUIRE(right_isosceles_triangle.get_label() == RIGHT_ISOSCELES_TRIANGLE);
     }
+
+    SECTION("RE can recognize specific tetragons.") {
+        Record square(4, 4, 4, 4);
+        rulesEngine.fill(square);
+        REQUIRE(square.get_label() == SQUARE);
+
+        Record rectangles(4, 4, 4, 2);
+        rulesEngine.fill(rectangles);
+        REQUIRE(rectangles.get_label() == RECTANGLE);
+
+        Record trapezium(4, 0, 2, 0);
+        rulesEngine.fill(trapezium);
+        REQUIRE(trapezium.get_label() == TRAPEZIUM);
+
+        Record isosceles_trapezium(4, 0, 2, 2);
+        rulesEngine.fill(isosceles_trapezium);
+        REQUIRE(isosceles_trapezium.get_label() == ISOSCELES_TRAPEZIUM);
+
+        Record parallelogram(4, 0, 4, 2);
+        rulesEngine.fill(parallelogram);
+        REQUIRE(parallelogram.get_label() == PARALLELOGRAM);
+
+        Record rhombus(4, 0, 4, 4);
+        rulesEngine.fill(rhombus);
+        REQUIRE(rhombus.get_label() == RHOMBUS);
+    }
 }

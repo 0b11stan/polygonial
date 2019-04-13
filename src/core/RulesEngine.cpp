@@ -24,7 +24,29 @@ void RulesEngine::fill(Record &record) {
             }
             break;
         case 4:
-            record.set_label(TETRAGON);
+            if (record.get_right_angles() == 4) {
+                if (record.get_same_length_sides() == 4) {
+                    record.set_label(SQUARE);
+                } else if (record.get_same_length_sides() == 2) {
+                    record.set_label(RECTANGLE);
+                }
+            } else if (record.get_right_angles() == 0) {
+                if (record.get_parallels_sides() == 2) {
+                    if (record.get_same_length_sides() == 0) {
+                        record.set_label(TRAPEZIUM);
+                    } else if (record.get_same_length_sides() == 2) {
+                        record.set_label(ISOSCELES_TRAPEZIUM);
+                    }
+                } else if (record.get_parallels_sides() == 4) {
+                    if (record.get_same_length_sides() == 2) {
+                        record.set_label(PARALLELOGRAM);
+                    } else if (record.get_same_length_sides() == 4) {
+                        record.set_label(RHOMBUS);
+                    }
+                } else {
+                    record.set_label(TETRAGON);
+                }
+            }
             break;
         case 5:
             record.set_label(PENTAGON);
