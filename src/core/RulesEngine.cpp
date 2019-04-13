@@ -49,7 +49,13 @@ void RulesEngine::fill(Record &record) {
             }
             break;
         case 5:
-            record.set_label(PENTAGON);
+            if (record.get_same_length_sides() == 5) {
+                record.set_label(EQUILATERAL_PENTAGON);
+            } else if (record.get_same_length_sides() == 666) {
+                record.set_label(SATANISTIC_PENTAGON);
+            } else {
+                record.set_label(PENTAGON);
+            }
             break;
         case 6:
             record.set_label(HEXAGON);

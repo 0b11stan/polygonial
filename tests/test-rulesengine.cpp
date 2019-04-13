@@ -58,4 +58,10 @@ TEST_CASE("RE can recognize simple polygon from triangle to decagon.", "[RE]") {
         rulesEngine.fill(rhombus);
         REQUIRE(rhombus.get_label() == RHOMBUS);
     }
+
+    SECTION("RE can recognize specific pentagons.") {
+        Record pentagon(5, 0, 0, 5);
+        rulesEngine.fill(pentagon);
+        REQUIRE(pentagon.get_label() == EQUILATERAL_PENTAGON);
+    }
 }
