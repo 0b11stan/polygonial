@@ -4,7 +4,7 @@
 
 #include "catch.hpp"
 
-#include "../src/Record.h"
+#include "../src/core/Record.h"
 
 TEST_CASE("Records usage.", "[record]") {
     Record record(3, 1, 0, 0);

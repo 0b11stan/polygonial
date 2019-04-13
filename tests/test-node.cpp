@@ -4,7 +4,7 @@
 
 #include "catch.hpp"
 #include <exception>
-#include "../src/Node.cpp"
+#include "../src/core/Node.cpp"
 
 TEST_CASE("The facts tree can fill a record if it already knows it.", "[node]") {
 

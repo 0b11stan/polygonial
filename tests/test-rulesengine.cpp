@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../src/RulesEngine.cpp"
+#include "../src/core/RulesEngine.cpp"
 
 TEST_CASE("RE can recognize simple polygon from triangle to decagon.", "[RE]") {
     RulesEngine rulesEngine;

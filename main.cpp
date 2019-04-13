@@ -5,10 +5,10 @@
 #include <cstdio>
 #include <getopt.h>
 #include <cstdlib>
-#include "src/Record.h"
-#include "src/RulesEngine.h"
-#include "src/FactsEngine.h"
-#include "src/InferenceEngine.h"
+#include "src/core/Record.h"
+#include "src/core/RulesEngine.h"
+#include "src/core/FactsEngine.h"
+#include "src/core/InferenceEngine.h"
 
 std::string to_string(Label label) {
     switch (label) {

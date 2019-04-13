@@ -3,12 +3,12 @@ project(polygonial)
 
 add_executable(polygonial
         main.cpp
-        src/FactsEngine.h src/FactsEngine.cpp
-        src/InferenceEngine.h src/InferenceEngine.cpp
-        src/Record.h
-        src/RulesEngine.h src/RulesEngine.cpp
-        src/Node.h src/Node.cpp
-        src/UnfilledRecordException.hpp)
+        src/core/FactsEngine.h src/core/FactsEngine.cpp
+        src/core/InferenceEngine.h src/core/InferenceEngine.cpp
+        src/core/Record.h
+        src/core/RulesEngine.h src/core/RulesEngine.cpp
+        src/core/Node.h src/core/Node.cpp
+        src/core/UnfilledRecordException.hpp)
 
 add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE tests/catch.hpp)

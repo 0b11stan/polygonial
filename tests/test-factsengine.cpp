@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../src/FactsEngine.cpp"
+#include "../src/core/FactsEngine.cpp"
 
 TEST_CASE("The fact engine can't store an unfilled record to it's fact database.", "[FE]") {
     FactsEngine factsEngine("/tmp/polygonial.tree");
