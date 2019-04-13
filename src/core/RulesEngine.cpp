@@ -8,7 +8,20 @@
 void RulesEngine::fill(Record &record) {
     switch (record.get_sides()) {
         case 3:
-            record.set_label(TRIANGLE);
+            if (record.get_same_length_sides() == 3) {
+                record.set_label(EQUILATERAL_TRIANGLE);
+            } else if (record.get_right_angles() == 1) {
+                if (record.get_same_length_sides() == 2) {
+                    record.set_label(RIGHT_ISOSCELES_TRIANGLE);
+                } else {
+                    record.set_label(RIGHT_TRIANGLE);
+                }
+            } else if (record.get_same_length_sides() == 2) {
+                record.set_label(ISOSCELES_TRIANGLE);
+
+            } else {
+                record.set_label(TRIANGLE);
+            }
             break;
         case 4:
             record.set_label(TETRAGON);
