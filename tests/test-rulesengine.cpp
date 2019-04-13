@@ -64,4 +64,18 @@ TEST_CASE("RE can recognize simple polygon from triangle to decagon.", "[RE]") {
         rulesEngine.fill(pentagon);
         REQUIRE(pentagon.get_label() == EQUILATERAL_PENTAGON);
     }
+
+    SECTION("RE can recognize regular hexagon to decagon.") {
+        Record hexagon(6, 0, 0, 6);
+        rulesEngine.fill(hexagon);
+        REQUIRE(hexagon.get_label() == REGULAR_HEXAGON);
+
+        Record octagon(8, 0, 0, 8);
+        rulesEngine.fill(octagon);
+        REQUIRE(octagon.get_label() == REGULAR_OCTAGON);
+
+        Record decagon(10, 0, 0, 10);
+        rulesEngine.fill(decagon);
+        REQUIRE(decagon.get_label() == REGULAR_DECAGON);
+    }
 }

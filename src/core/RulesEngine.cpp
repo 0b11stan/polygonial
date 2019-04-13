@@ -58,19 +58,31 @@ void RulesEngine::fill(Record &record) {
             }
             break;
         case 6:
-            record.set_label(HEXAGON);
+            if (record.get_same_length_sides() == 6) {
+                record.set_label(REGULAR_HEXAGON);
+            } else {
+                record.set_label(HEXAGON);
+            }
             break;
         case 7:
             record.set_label(HEPTAGON);
             break;
         case 8:
-            record.set_label(OCTAGON);
+            if (record.get_same_length_sides() == 8) {
+                record.set_label(REGULAR_OCTAGON);
+            } else {
+                record.set_label(OCTAGON);
+            }
             break;
         case 9:
             record.set_label(NONAGON);
             break;
         case 10:
-            record.set_label(DECAGON);
+            if (record.get_same_length_sides() == 10) {
+                record.set_label(REGULAR_DECAGON);
+            } else {
+                record.set_label(DECAGON);
+            }
             break;
     }
 }
