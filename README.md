@@ -6,4 +6,6 @@ Expert system detecting polygon developped in C++ by François Montagné and Tri
 - [x] Filling a record trough the binary tree.
 - [ ] Saving facts to a given local file.
 - [x] Finding triangles to decagons.
-- [ ] Command line interface.
+- [x] Basic Command line interface.
+- [ ] Graphical User Interface
+- [ ] Specific rules.

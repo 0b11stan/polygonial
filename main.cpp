@@ -34,7 +34,7 @@ std::string to_string(Label label) {
     }
 }
 
-int main(int argc, char *argv[]) {
+void start_cli(int argc, char *argv[]) {
     printf("Welcome to Polygonial, your polygon :\n");
 
     int count;
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
                 break;
             default:
                 printf("ERROR : no args provided.");
-                return 0;
+                return;
         }
     }
 
@@ -75,6 +75,15 @@ int main(int argc, char *argv[]) {
     inferenceEngine.process(record);
 
     printf("\nYour polygon is a %s\n", to_string(record.get_label()).c_str());
+}
+
+void start_gui() {
+    printf("GUI NOT IMPLEMENTED YET\n");
+}
+
+int main(int argc, char *argv[]) {
+    if (argc > 1) start_cli(argc, argv);
+    else start_gui();
 
     return 0;
 }
