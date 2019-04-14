@@ -3,6 +3,7 @@ project(polygonial)
 
 add_executable(polygonial
         main.cpp
+        src/cli/cli.cpp
         src/core/FactsEngine.h src/core/FactsEngine.cpp
         src/core/InferenceEngine.h src/core/InferenceEngine.cpp
         src/core/Record.h
