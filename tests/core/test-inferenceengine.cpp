@@ -2,8 +2,8 @@
 // Created by tristan on 09/04/19.
 //
 
-#include "catch.hpp"
-#include "../src/core/InferenceEngine.cpp"
+#include "../catch.hpp"
+#include "../../src/core/InferenceEngine.cpp"
 
 TEST_CASE("IE is always filling a record when possible.", "[IE]") {
     FactsEngine factsEngine("/tmp/polygonial");

@@ -15,12 +15,12 @@ add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE tests/catch.hpp)
 
 add_executable(tests
-        tests/test-main.cpp
-        tests/test-record.cpp
-        tests/test-node.cpp
-        tests/test-factsengine.cpp
-        tests/test-rulesengine.cpp
-        tests/test-inferenceengine.cpp)
+        tests/core/test-main.cpp
+        tests/core/test-record.cpp
+        tests/core/test-node.cpp
+        tests/core/test-factsengine.cpp
+        tests/core/test-rulesengine.cpp
+        tests/core/test-inferenceengine.cpp)
 
 target_link_libraries(tests Catch)
 enable_testing()

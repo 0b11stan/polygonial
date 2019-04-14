@@ -2,8 +2,8 @@
 // Created by tristan on 09/04/19.
 //
 
-#include "catch.hpp"
-#include "../src/core/RulesEngine.cpp"
+#include "../catch.hpp"
+#include "../../src/core/RulesEngine.cpp"
 
 TEST_CASE("RE can recognize simple polygon from triangle to decagon.", "[RE]") {
     RulesEngine rulesEngine;

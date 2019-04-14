@@ -2,9 +2,9 @@
 // Created by tristan on 07/04/19.
 //
 
-#include "catch.hpp"
+#include "../catch.hpp"
 #include <exception>
-#include "../src/core/Node.cpp"
+#include "../../src/core/Node.cpp"
 
 TEST_CASE("The facts tree can fill a record if it already knows it.", "[node]") {
 

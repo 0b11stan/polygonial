@@ -2,8 +2,8 @@
 // Created by tristan on 09/04/19.
 //
 
-#include "catch.hpp"
-#include "../src/core/FactsEngine.cpp"
+#include "../catch.hpp"
+#include "../../src/core/FactsEngine.cpp"
 
 TEST_CASE("The fact engine can't store an unfilled record to it's fact database.", "[FE]") {
     FactsEngine factsEngine("/tmp/polygonial.tree");
