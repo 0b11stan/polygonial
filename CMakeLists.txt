@@ -15,6 +15,7 @@ add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE tests/catch.hpp)
 
 add_executable(tests
+        tests/cli/test-cli.cpp
         tests/core/test-main.cpp
         tests/core/test-record.cpp
         tests/core/test-node.cpp

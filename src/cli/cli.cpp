@@ -25,12 +25,27 @@ void CLI::start_shell() {
     while (command != "exit") {
         cout << "polygonial> ";
         getline(cin, command);
-        cout << "you asked for : " + command << endl;
+        if (command == "help") {
+            cout << "usage :" << endl;
+            cout << "  request       Start an interactive new polygon request." << endl;
+            cout << "  tree          Show the fact database." << endl;
+            cout << "  help          Show this help." << endl;
+        } else if (command == "request") {
+            int sides = 0;
+            int right_angles = 0;
+            int parallels_sides = 0;
+            int same_length_sides = 0;
+
+            cout << "Number of sides : "; cin >> sides;
+            cout << "Number of right angles : "; cin >> right_angles;
+            cout << "Number of sides which are parallel with another one : "; cin >> parallels_sides;
+            cout << "Maximum number of sides which have the same size : "; cin >> same_length_sides;
+        }
     }
 }
 
 void CLI::start_one_liner() {
-    cout << "NOT IMPLEMENTED YET" << endl;
+    cout << "ONE LINER IS NOT IMPLEMENTED YET" << endl;
 //    cout << "Your polygon :" << endl;
 //    int count;
 //    int sides = 0;
