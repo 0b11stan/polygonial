@@ -6,23 +6,30 @@
 #include <getopt.h>
 #include <cstdlib>
 #include <iostream>
+#include <QApplication>
+#include <src/gui/mainwindow.h>
 #include "src/core/Record.h"
 #include "src/core/RulesEngine.h"
 #include "src/core/FactsEngine.h"
 #include "src/core/InferenceEngine.h"
 #include "src/cli/cli.h"
 
+int start_gui(int argc, char *argv[]) {
+    QApplication application(argc, argv);
+    MainWindow window;
+    window.show();
 
-void start_gui() {
-    printf("GUI NOT IMPLEMENTED YET\n");
+    return application.exec();
 }
 
 int main(int argc, char *argv[]) {
+    int return_value;
+
     if (argc > 1) {
         CLI cli(argc, argv);
         cli.start();
     }
-    else start_gui();
+    else return_value = start_gui(argc, argv);
 
-    return 0;
+    return return_value;
 }

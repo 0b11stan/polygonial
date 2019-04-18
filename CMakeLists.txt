@@ -1,9 +1,19 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1.0)
 project(polygonial)
 
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Instruct CMake to run moc automatically when needed
+set(CMAKE_AUTOMOC ON)
+# Create code from a list of Qt designer ui files
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt5Widgets CONFIG REQUIRED)
 add_executable(polygonial
         main.cpp
         src/cli/cli.cpp
+        src/gui/mainwindow.h src/gui/mainwindow.cpp
+        src/gui/mainwindow.ui
         src/core/FactsEngine.h src/core/FactsEngine.cpp
         src/core/InferenceEngine.h src/core/InferenceEngine.cpp
         src/core/Record.h
@@ -24,5 +34,6 @@ add_executable(tests
         tests/core/test-inferenceengine.cpp)
 
 target_link_libraries(tests Catch)
+target_link_libraries(polygonial Qt5::Widgets)
 enable_testing()
 add_test(NAME PolygonialTest COMMAND tests)

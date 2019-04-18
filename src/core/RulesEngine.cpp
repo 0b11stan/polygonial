@@ -2,7 +2,6 @@
 // Created by tristan on 04/04/19.
 //
 
-#include <backtrace.h>
 #include "RulesEngine.h"
 
 void RulesEngine::fill(Record &record) {
