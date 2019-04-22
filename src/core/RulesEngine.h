@@ -6,7 +6,7 @@
 #define POLYGONIAL_RULESENGINE_H
 
 
-#include "Record.h"
+#include "Record.hpp"
 
 class RulesEngine {
 

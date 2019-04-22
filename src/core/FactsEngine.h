@@ -9,7 +9,7 @@
 #include <string>
 #include <memory>
 #include "Node.h"
-#include "Record.h"
+#include "Record.hpp"
 #include "UnfilledRecordException.hpp"
 
 class FactsEngine {

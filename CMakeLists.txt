@@ -16,7 +16,7 @@ add_executable(polygonial
         src/gui/mainwindow.ui
         src/core/FactsEngine.h src/core/FactsEngine.cpp
         src/core/InferenceEngine.h src/core/InferenceEngine.cpp
-        src/core/Record.h
+        src/core/Record.hpp
         src/core/RulesEngine.h src/core/RulesEngine.cpp
         src/core/Node.h src/core/Node.cpp
         src/core/UnfilledRecordException.hpp)

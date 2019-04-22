@@ -6,8 +6,8 @@
 #define POLYGONIAL_UNFILLEDRECORDEXCEPTION_HPP
 
 #include <exception>
-#include "Record.h"
 #include <string>
+#include "Record.hpp"
 
 class UnfilledRecordException : virtual public std::exception {
 

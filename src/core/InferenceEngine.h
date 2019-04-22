@@ -8,7 +8,7 @@
 
 #include "FactsEngine.h"
 #include "RulesEngine.h"
-#include "Record.h"
+#include "Record.hpp"
 
 class InferenceEngine {
 

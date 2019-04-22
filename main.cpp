@@ -8,7 +8,7 @@
 #include <iostream>
 #include <QApplication>
 #include <src/gui/mainwindow.h>
-#include "src/core/Record.h"
+#include "src/core/Record.hpp"
 #include "src/core/RulesEngine.h"
 #include "src/core/FactsEngine.h"
 #include "src/core/InferenceEngine.h"

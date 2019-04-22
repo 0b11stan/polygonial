@@ -6,7 +6,7 @@
 #define POLYGONIAL_NODE_H
 
 #include <vector>
-#include "Record.h"
+#include "Record.hpp"
 #include "UnfilledRecordException.hpp"
 
 class Node {

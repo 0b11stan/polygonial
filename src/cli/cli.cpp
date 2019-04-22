@@ -21,6 +21,9 @@ void CLI::start() {
 
 void CLI::start_shell() {
     string command;
+    FactsEngine factsEngine("/tmp/polygonial");
+    RulesEngine rulesEngine;
+    InferenceEngine inferenceEngine(factsEngine, rulesEngine);
 
     while (command != "exit") {
         cout << "polygonial> ";
@@ -40,6 +43,9 @@ void CLI::start_shell() {
             cout << "Number of right angles : "; cin >> right_angles;
             cout << "Number of sides which are parallel with another one : "; cin >> parallels_sides;
             cout << "Maximum number of sides which have the same size : "; cin >> same_length_sides;
+            Record record(sides, right_angles, parallels_sides, same_length_sides);
+            inferenceEngine.process(record);
+            cout << "Your polygon is a : " << record.to_string() << endl;
         }
     }
 }
