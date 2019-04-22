@@ -43,4 +43,17 @@ TEST_CASE(
   REQUIRE(not unfilled_record.is_filled());
   factsEngine.fill(unfilled_record);
   REQUIRE(unfilled_record.is_filled());
+
+  SECTION("works for multiple records") {
+    Record second_filled_record = Record(6, 6, 6, 6);
+    second_filled_record.set_label(REGULAR_HEXAGON);
+
+    Record second_unfilled_record = Record(6, 6, 6, 6);
+
+    factsEngine.store(second_filled_record);
+    REQUIRE(not second_unfilled_record.is_filled());
+    factsEngine.fill(second_unfilled_record);
+    REQUIRE(second_unfilled_record.is_filled());
+    REQUIRE(second_unfilled_record.get_label() == REGULAR_HEXAGON);
+  }
 }

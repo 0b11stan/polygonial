@@ -50,6 +50,7 @@ void CLI::start_shell() {
       inferenceEngine.process(record);
       cout << "Your polygon is a : " << record.to_string() << endl;
     } else if (command == "tree") {
+      factsEngine.display();
     }
   }
 }

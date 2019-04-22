@@ -34,7 +34,7 @@ class FactsEngine {
   /*
    * Display the tree in a text format
    */
-  std::string to_string();
+  void display();
 };
 
 #endif  // POLYGONIAL_FACTSENGINE_H

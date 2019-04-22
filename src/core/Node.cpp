@@ -35,3 +35,12 @@ void Node::order(Node *node) {
   } else
     records.push_back(node->get_record());
 }
+
+void Node::display(int offset, Node *node) {
+  if (node != nullptr) {
+    for (int x = 0; x < offset; x++) std::cout << ".";
+    std::cout << " " << node->key << std::endl;
+    display(offset + 1, node->left);
+    display(offset + 1, node->right);
+  }
+}

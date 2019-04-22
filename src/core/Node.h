@@ -6,6 +6,8 @@
 #define POLYGONIAL_NODE_H
 
 #include <vector>
+#include <string>
+#include <iostream>
 #include "Record.hpp"
 #include "UnfilledRecordException.hpp"
 
@@ -42,6 +44,8 @@ class Node {
   int get_key() { return key; }
 
   Record get_record() { return records.back(); }
+
+  static void display(int offset, Node *node);
 };
 
 #endif  // POLYGONIAL_NODE_H
