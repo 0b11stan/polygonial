@@ -5,26 +5,23 @@
 #ifndef POLYGONIAL_INFERENCEENGINE_H
 #define POLYGONIAL_INFERENCEENGINE_H
 
-
 #include "FactsEngine.h"
-#include "RulesEngine.h"
 #include "Record.hpp"
+#include "RulesEngine.h"
 
 class InferenceEngine {
+ private:
+  FactsEngine &factsEngine;
+  RulesEngine &rulesEngine;
 
-private:
-    FactsEngine &factsEngine;
-    RulesEngine &rulesEngine;
+ public:
+  InferenceEngine(FactsEngine &factsEngine, RulesEngine &rulesEngine);
 
-public:
-    InferenceEngine(FactsEngine &factsEngine, RulesEngine &rulesEngine);
-
-    /*
-     * Routing logic to fill the record either from the fact engine or the rules engine
-     */
-    void process(Record &record);
-
+  /*
+   * Routing logic to fill the record either from the fact engine or the rules
+   * engine
+   */
+  void process(Record &record);
 };
 
-
-#endif //POLYGONIAL_INFERENCEENGINE_H
+#endif  // POLYGONIAL_INFERENCEENGINE_H

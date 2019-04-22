@@ -4,13 +4,14 @@
 
 #include "InferenceEngine.h"
 
-InferenceEngine::InferenceEngine(FactsEngine &factsEngine, RulesEngine &rulesEngine) : rulesEngine(rulesEngine),
-                                                                                       factsEngine(factsEngine) {}
+InferenceEngine::InferenceEngine(FactsEngine &factsEngine,
+                                 RulesEngine &rulesEngine)
+    : factsEngine(factsEngine), rulesEngine(rulesEngine) {}
 
 void InferenceEngine::process(Record &record) {
-    factsEngine.fill(record);
-    if (!record.is_filled()) {
-        rulesEngine.fill(record);
-        factsEngine.store(record);
-    }
+  factsEngine.fill(record);
+  if (!record.is_filled()) {
+    rulesEngine.fill(record);
+    factsEngine.store(record);
+  }
 }

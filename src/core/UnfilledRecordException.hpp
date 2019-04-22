@@ -10,11 +10,9 @@
 #include "Record.hpp"
 
 class UnfilledRecordException : virtual public std::exception {
-
-    const char *what() const noexcept override {
-        return "Un unfilled record was provided where a filled one was expected.";
-    }
-
+  const char *what() const noexcept override {
+    return "Un unfilled record was provided where a filled one was expected.";
+  }
 };
 
-#endif //POLYGONIAL_UNFILLEDRECORDEXCEPTION_HPP
+#endif  // POLYGONIAL_UNFILLEDRECORDEXCEPTION_HPP
