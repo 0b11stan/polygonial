@@ -21,10 +21,13 @@ TEST_CASE("The facts tree can fill a record if it already knows it.",
   }
 
   SECTION("A leaf parent_node can't fill a record if no fact match.") {
-    Record unfilled_record(3, 0, 0, 3);
-    parent_node.fill(unfilled_record);
+    Record first_unfilled_record(3, 0, 0, 3);
+    Record second_unfilled_record(4, 4, 4, 2);
+    parent_node.fill(first_unfilled_record);
+    parent_node.fill(second_unfilled_record);
 
-    REQUIRE(unfilled_record.get_label() == Label::NONE);
+    REQUIRE(first_unfilled_record.get_label() == Label::NONE);
+    REQUIRE(second_unfilled_record.get_label() == Label::NONE);
   }
 
   SECTION("A record can be filled by the left child parent_node.") {

@@ -12,9 +12,16 @@ Node::Node(Record record) {
 
 void Node::fill(Record &record) {
   Record last_record = records.back();
-  if (record.get_sides() == key)
-    record.set_label(last_record.get_label());
-  else if (record.get_sides() < key) {
+  if (record.get_sides() == key) {
+    for (auto &test_record : this->records) {
+      if (test_record.get_right_angles() == record.get_right_angles() &&
+          test_record.get_parallels_sides() == record.get_parallels_sides() &&
+          test_record.get_same_length_sides() ==
+              record.get_same_length_sides()) {
+        record.set_label(test_record.get_label());
+      }
+    }
+  } else if (record.get_sides() < key) {
     if (has_left()) left->fill(record);
   } else if (record.get_sides() > key) {
     if (has_right()) right->fill(record);
@@ -40,6 +47,10 @@ void Node::display(int offset, Node *node) {
   if (node != nullptr) {
     for (int x = 0; x < offset; x++) std::cout << ".";
     std::cout << " " << node->key << std::endl;
+    for (auto &record : node->records) {
+        for (int x = 0; x < offset; x++) std::cout << " ";
+        std::cout << " > " << record.to_string() << std::endl;
+    }
     display(offset + 1, node->left);
     display(offset + 1, node->right);
   }
