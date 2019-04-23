@@ -28,10 +28,9 @@ void CLI::start_shell() {
     getline(cin, command);
     if (command == "help") {
       cout << "usage :" << endl;
-      cout << "  request       Start an interactive new polygon request."
-           << endl;
-      cout << "  tree          Show the fact database." << endl;
-      cout << "  help          Show this help." << endl;
+      cout << "  request    Start an interactive new polygon request." << endl;
+      cout << "  tree       Show the fact database." << endl;
+      cout << "  help       Show this help." << endl;
     } else if (command == "request") {
       int sides = 0;
       int right_angles = 0;
