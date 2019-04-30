@@ -34,6 +34,33 @@ enum Label {
   REGULAR_DECAGON
 };
 
+static const char* LabelString[] = {
+  "UNKNOWN POLYGON",
+  "TRIANGLE",
+  "RIGHT TRIANGLE",
+  "ISOSCELES TRIANGLE",
+  "RIGHT ISOSCELES TRIANGLE",
+  "EQUILATERAL TRIANGLE",
+  "TETRAGON",
+  "SQUARE",
+  "RECTANGLE",
+  "TRAPEZIUM",
+  "ISOSCELES TRAPEZIUM",
+  "PARALLELOGRAM",
+  "RHOMBUS",
+  "PENTAGON",
+  "EQUILATERAL PENTAGON",
+  "SATANISTIC PENTAGON",
+  "HEXAGON",
+  "REGULAR HEXAGON",
+  "HEPTAGON",
+  "OCTAGON",
+  "REGULAR OCTAGON",
+  "NONAGON",
+  "DECAGON",
+  "REGULAR DECAGON",
+};
+
 class Record {
  private:
   int sides;
@@ -64,59 +91,7 @@ class Record {
 
   bool is_filled() { return label != NONE; }
 
-  std::string to_string() {
-    switch (this->label) {
-      case TRIANGLE:
-        return "TRIANGLE";
-      case RIGHT_TRIANGLE:
-        return "RIGHT TRIANGLE";
-      case ISOSCELES_TRIANGLE:
-        return "ISOSCELES TRIANGLE";
-      case EQUILATERAL_TRIANGLE:
-        return "EQUILATERAL TRIANGLE";
-      case RIGHT_ISOSCELES_TRIANGLE:
-        return "RIGHT ISOSCELES TRIANGLE";
-      case TETRAGON:
-        return "TETRAGON";
-      case SQUARE:
-        return "SQUARE";
-      case TRAPEZIUM:
-        return "TRAPEZIUM";
-      case ISOSCELES_TRAPEZIUM:
-        return "ISOSCELES TRAPEZIUM";
-      case RECTANGLE:
-        return "RECTANGLE";
-      case PARALLELOGRAM:
-        return "PARALLELOGRAM";
-      case RHOMBUS:
-        return "RHOMBUS";
-      case PENTAGON:
-        return "PENTAGON";
-      case EQUILATERAL_PENTAGON:
-        return "EQUILATERAL PENTAGON";
-      case SATANISTIC_PENTAGON:
-        return "SATANISTIC PENTAGON";
-      case HEXAGON:
-        return "HEXAGON";
-      case REGULAR_HEXAGON:
-        return "REGULAR_HEXAGON";
-      case HEPTAGON:
-        return "HEPTAGON";
-      case OCTAGON:
-        return "OCTAGON";
-      case REGULAR_OCTAGON:
-        return "REGULAR_OCTAGON";
-      case NONAGON:
-        return "NONAGON";
-      case DECAGON:
-        return "DECAGON";
-      case REGULAR_DECAGON:
-        return "REGULAR_DECAGON";
-      case NONE:
-      default:
-        return "UNKNOWN POLYGON";
-    }
-  }
+  std::string to_string() { return LabelString[this->label]; }
 };
 
 #endif  // POLYGONIAL_RECORD_H
