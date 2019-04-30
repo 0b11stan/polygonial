@@ -113,6 +113,7 @@ class Record {
       case REGULAR_DECAGON:
         return "REGULAR_DECAGON";
       case NONE:
+      default:
         return "UNKNOWN POLYGON";
     }
   }
