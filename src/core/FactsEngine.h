@@ -16,10 +16,11 @@ class FactsEngine {
  private:
   std::string file_path;
   std::unique_ptr<Node> root_node = nullptr;
+  std::fstream fact_buffer;
 
  public:
-  explicit FactsEngine(std::string file_path)
-      : file_path(std::move(file_path)) {}
+  explicit FactsEngine(std::string file_path);
+  ~FactsEngine();
 
   /*
    * Store the record in the fact tree.

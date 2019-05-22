@@ -19,7 +19,8 @@ void CLI::start() {
 
 void CLI::start_shell() {
   string command;
-  FactsEngine factsEngine("/tmp/polygonial");
+  string path("/tmp/polygonial");
+  FactsEngine factsEngine(path);
   RulesEngine rulesEngine;
   InferenceEngine inferenceEngine(factsEngine, rulesEngine);
 
@@ -51,6 +52,7 @@ void CLI::start_shell() {
     } else if (command == "tree") {
       factsEngine.display();
     }
+    cout << endl;
   }
 }
 

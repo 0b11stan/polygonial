@@ -43,15 +43,15 @@ void Node::order(Node *node) {
     records.push_back(node->get_record());
 }
 
-void Node::display(int offset, Node *node) {
+void Node::display(int offset, Node *node, std::fstream &buffer) {
   if (node != nullptr) {
-    for (int x = 0; x < offset; x++) std::cout << ".";
-    std::cout << " " << node->key << std::endl;
+    for (int x = 0; x < offset; x++) buffer << ".";
+    buffer << " " << node->key << std::endl;
     for (auto &record : node->records) {
-        for (int x = 0; x < offset; x++) std::cout << " ";
-        std::cout << " > " << record.to_string() << std::endl;
+      for (int x = 0; x < offset; x++) buffer << " ";
+      buffer << " > " << record.to_string() << std::endl;
     }
-    display(offset + 1, node->left);
-    display(offset + 1, node->right);
+    display(offset + 1, node->left, buffer);
+    display(offset + 1, node->right, buffer);
   }
 }

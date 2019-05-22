@@ -5,9 +5,10 @@
 #ifndef POLYGONIAL_NODE_H
 #define POLYGONIAL_NODE_H
 
-#include <vector>
-#include <string>
+#include <fstream>
 #include <iostream>
+#include <string>
+#include <vector>
 #include "Record.hpp"
 #include "UnfilledRecordException.hpp"
 
@@ -45,7 +46,7 @@ class Node {
 
   Record get_record() { return records.back(); }
 
-  static void display(int offset, Node *node);
+  static void display(int offset, Node *node, std::fstream &buffer);
 };
 
 #endif  // POLYGONIAL_NODE_H
