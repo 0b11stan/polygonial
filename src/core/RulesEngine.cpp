@@ -7,54 +7,13 @@
 void RulesEngine::fill(Record &record) {
   switch (record.get_sides()) {
     case 3:
-      if (record.get_same_length_sides() == 3) {
-        record.set_label(EQUILATERAL_TRIANGLE);
-      } else if (record.get_right_angles() == 1) {
-        if (record.get_same_length_sides() == 2) {
-          record.set_label(RIGHT_ISOSCELES_TRIANGLE);
-        } else {
-          record.set_label(RIGHT_TRIANGLE);
-        }
-      } else if (record.get_same_length_sides() == 2) {
-        record.set_label(ISOSCELES_TRIANGLE);
-
-      } else {
-        record.set_label(TRIANGLE);
-      }
+      fill_three(record);
       break;
     case 4:
-      if (record.get_right_angles() == 4) {
-        if (record.get_same_length_sides() == 4) {
-          record.set_label(SQUARE);
-        } else if (record.get_same_length_sides() == 2) {
-          record.set_label(RECTANGLE);
-        }
-      } else if (record.get_right_angles() == 0) {
-        if (record.get_parallels_sides() == 2) {
-          if (record.get_same_length_sides() == 0) {
-            record.set_label(TRAPEZIUM);
-          } else if (record.get_same_length_sides() == 2) {
-            record.set_label(ISOSCELES_TRAPEZIUM);
-          }
-        } else if (record.get_parallels_sides() == 4) {
-          if (record.get_same_length_sides() == 2) {
-            record.set_label(PARALLELOGRAM);
-          } else if (record.get_same_length_sides() == 4) {
-            record.set_label(RHOMBUS);
-          }
-        } else {
-          record.set_label(TETRAGON);
-        }
-      }
+      fill_four(record);
       break;
     case 5:
-      if (record.get_same_length_sides() == 5) {
-        record.set_label(EQUILATERAL_PENTAGON);
-      } else if (record.get_same_length_sides() == 666) {
-        record.set_label(SATANISTIC_PENTAGON);
-      } else {
-        record.set_label(PENTAGON);
-      }
+      fill_five(record);
       break;
     case 6:
       if (record.get_same_length_sides() == 6) {
@@ -85,3 +44,57 @@ void RulesEngine::fill(Record &record) {
       break;
   }
 }
+
+void RulesEngine::fill_three(Record &record) {
+  if (record.get_same_length_sides() == 3) {
+    record.set_label(EQUILATERAL_TRIANGLE);
+  } else if (record.get_right_angles() == 1) {
+    if (record.get_same_length_sides() == 2) {
+      record.set_label(RIGHT_ISOSCELES_TRIANGLE);
+    } else {
+      record.set_label(RIGHT_TRIANGLE);
+    }
+  } else if (record.get_same_length_sides() == 2) {
+    record.set_label(ISOSCELES_TRIANGLE);
+
+  } else {
+    record.set_label(TRIANGLE);
+  }
+}
+
+void RulesEngine::fill_four(Record &record) {
+  if (record.get_right_angles() == 4) {
+    if (record.get_same_length_sides() == 4) {
+      record.set_label(SQUARE);
+    } else if (record.get_same_length_sides() == 2) {
+      record.set_label(RECTANGLE);
+    }
+  } else if (record.get_right_angles() == 0) {
+    if (record.get_parallels_sides() == 2) {
+      if (record.get_same_length_sides() == 0) {
+        record.set_label(TRAPEZIUM);
+      } else if (record.get_same_length_sides() == 2) {
+        record.set_label(ISOSCELES_TRAPEZIUM);
+      }
+    } else if (record.get_parallels_sides() == 4) {
+      if (record.get_same_length_sides() == 2) {
+        record.set_label(PARALLELOGRAM);
+      } else if (record.get_same_length_sides() == 4) {
+        record.set_label(RHOMBUS);
+      }
+    } else {
+      record.set_label(TETRAGON);
+    }
+  }
+}
+
+void RulesEngine::fill_five(Record &record) {
+  if (record.get_same_length_sides() == 5) {
+    record.set_label(EQUILATERAL_PENTAGON);
+  } else if (record.get_same_length_sides() == 666) {
+    record.set_label(SATANISTIC_PENTAGON);
+  } else {
+    record.set_label(PENTAGON);
+  }
+}
+
